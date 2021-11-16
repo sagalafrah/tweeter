@@ -13,6 +13,11 @@ html {
 /*
  * Global layout stuff
  */
+ /* source sans pro font should apply to everything*/
+ * font {
+   font-family: source Sans Pro;
+ }
+ 
 
 body {
   color: #545149;
