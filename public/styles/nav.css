@@ -1,0 +1,21 @@
+nav {
+font-family: 'Source Sans Pro', sans-serif;
+height: 120px;
+width: auto;
+background-color: #4056a1;
+color: #FFFFFF;
+}
+span {
+font-family: 'bungee', cursive;
+margin-left: 1.5em;
+}
+
+.test {
+text-align: right;
+margin-right: 1.5em;  
+}
+
+i {
+color: red;
+margin-left: 45em;
+}
