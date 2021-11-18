@@ -42,11 +42,17 @@ const renderTweets = function(tweets) {
       }
     };
   
- 
+    $('.input form').submit(event => {
+        event.preventDefault();
+      })
+
+      $.ajax('/tweets', {
+        data: $(this).serialize(),
+        method: 'POST'
+      });
+    
 
 const createTweetElement = function(tweet) {
-    // const $tweet = $(`<article class="tweet">Hello world</article>`);
-    //create HTML
     const exampleTweet = `<article class="tweet">
           <header>
             <img src= ${tweet.user.avatars}/>
