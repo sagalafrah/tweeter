@@ -29,11 +29,11 @@ const data = [
   ]
 
 const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+    for (const tweet of tweets) {
+        $('#tweets-container').append(createTweetElement(tweet));
+      }
+    };
   
-}
 
 const createTweetElement = function(tweet) {
   let $tweet = /* Your code for creating the tweet element */
