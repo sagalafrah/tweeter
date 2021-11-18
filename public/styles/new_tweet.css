@@ -1,3 +1,4 @@
+
 .new-tweet textarea {
     width: 100%;
     height: 45px;
@@ -11,12 +12,21 @@
   }
 
 
+  /* Double colon selector are pseudo-elements, found this because .placeholder text area{ was not working.
+    This is because "placeholder" is not an element.*/
+  textarea::placeholder {
+    font-weight: 300;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
 
 input {
     background-color: #4056A1;
+    width: 100%
     font-family: 'Bungee', sans-serif;
     color: #FFFFFF;
     margin-top: 10px;
+    border: none;
   }
 
   .counter {
@@ -29,3 +39,26 @@ input {
   .over-char-limit {
     color:#FF0000;
   }
+
+ /* A single tweet */
+article.tweet {
+    border: 4px;
+    border-style: solid;
+    border-color: #545149;
+    margin: 40px 0;
+  }
+  article.tweet header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+  }
+
+  
+  
+
+  
+
+  
+
+  
+
