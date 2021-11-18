@@ -36,8 +36,7 @@ const renderTweets = function(tweets) {
   
 
 const createTweetElement = function(tweet) {
-  let $tweet = /* Your code for creating the tweet element */
-  // ...
+    const $tweet = $(`<article class="tweet">Hello world</article>`);
   return $tweet;
 }
 
