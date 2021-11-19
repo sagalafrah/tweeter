@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
 
 /* Escape Function */
   const escape = str => {
@@ -9,17 +9,17 @@ $(document).ready(function() {
 
 /* Render New Tweets Function */
 
-  const renderTweets = function(tweets) {
-    $('#tweets-container').empty();
-    for (const tweet of tweets) {
-      const newTweet = createTweetElement(tweet);
-      $('#tweets-container').prepend(newTweet);
-    }
+  const renderTweets = (tweets) => {
+      $('#tweets-container').empty();
+      for (const tweet of tweets) {
+          const newTweet = createTweetElement(tweet);
+          $('#tweets-container').prepend(newTweet);
+      }
   };
   
 /* Submit Function */
 
-  $('.input').on('submit', function(event) {
+  $('.input').on('submit', (event) => {
     event.preventDefault();
     const tweetText = $(this).children('textarea').val();
     console.log(tweetText);
@@ -47,20 +47,20 @@ $(document).ready(function() {
     
 /* Load Tweets Function */
 
-  const loadTweets = function() {
-    $.ajax('/tweets', {
-      method: 'GET',
-      dataType: 'JSON'
-    })
-      .then(tweets => renderTweets(tweets));
+  const loadTweets = () => {
+      $.ajax('/tweets', {
+          method: 'GET',
+          dataType: 'JSON'
+      })
+          .then(tweets => renderTweets(tweets));
   };
     
   loadTweets();
 
 /* Create New Tweet Element Function */
 
-  const createTweetElement = function(tweet) {
-    const exampleTweet = `<article class="tweet">
+  const createTweetElement = (tweet) => {
+      const exampleTweet = `<article class="tweet">
           <header>
             <img src= ${escape(tweet.user.avatars)}/>
               <h4>${escape(tweet.user.name)}</h4>
@@ -73,7 +73,7 @@ $(document).ready(function() {
           </footer>
         </article>`;
 
-    return exampleTweet;
+      return exampleTweet;
   };
 
 });
