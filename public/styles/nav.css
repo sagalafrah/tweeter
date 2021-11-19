@@ -24,12 +24,14 @@ margin-left: 1.5em;
     flex-direction: column;
     justify-content: right;
     align-items: flex-end;
-    margin-top: 30px;
+    margin-top: 0px;
     padding: 1.5em;
   }
 
 
 
-i {
-color: red;
+button {
+background-color: transparent;
+border: none;
+color: #FF0000
 }
