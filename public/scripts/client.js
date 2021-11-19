@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function() {
 
     /* Escape Function */
@@ -20,7 +17,7 @@ $(document).ready(function() {
     }
   };
   
-  /* Submit Function */
+/* Submit Function */
 
   $('.input').on('submit', function(event) {
     event.preventDefault();
@@ -60,7 +57,7 @@ $(document).ready(function() {
     
   loadTweets();
 
-   /* Create New Tweet Element Function */
+/* Create New Tweet Element Function */
 
   const createTweetElement = function(tweet) {
     const exampleTweet = `<article class="tweet">
