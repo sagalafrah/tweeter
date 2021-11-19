@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    /* Escape Function */
+/* Escape Function */
   const escape = str => {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
