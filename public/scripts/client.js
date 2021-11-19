@@ -5,14 +5,13 @@
  */
 
 $(document).ready(function() {
-
-
-
-    const escape =  function(str) {
-        let div = document.createElement('div');
+    const escape = str => {
+        const div = document.createElement('div');
         div.appendChild(document.createTextNode(str));
-        return div.exampleTweet;
-      }
+        return div.innerHTML;
+      };
+
+
 
 
 const renderTweets = function(tweets) {  
@@ -64,7 +63,7 @@ const renderTweets = function(tweets) {
 const createTweetElement = function(tweet) {
     const exampleTweet = `<article class="tweet">
           <header>
-            <img src= ${tweet.user.avatars}/>
+            <img src= ${escape(tweet.user.avatars)}/>
               <h4>${escape(tweet.user.name)}</h4>
               <p>${escape(tweet.user.handle)}</p>
           </header>
