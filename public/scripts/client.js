@@ -1,66 +1,68 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+
+
 
 $(document).ready(function() {
-    const escape = str => {
-        const div = document.createElement('div');
-        div.appendChild(document.createTextNode(str));
-        return div.innerHTML;
-      };
 
+    /* Escape Function */
+  const escape = str => {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
+/* Render New Tweets Function */
 
-
-const renderTweets = function(tweets) {  
+  const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (const tweet of tweets) {
-        const newTweet = createTweetElement(tweet)
-        $('#tweets-container').prepend(newTweet);
-      }
-    };
+      const newTweet = createTweetElement(tweet);
+      $('#tweets-container').prepend(newTweet);
+    }
+  };
   
-    $('.input').on('submit', function(event) {
-        event.preventDefault();
-        const tweetText = $(this).children('textarea').val();
-        console.log(tweetText);
+  /* Submit Function */
+
+  $('.input').on('submit', function(event) {
+    event.preventDefault();
+    const tweetText = $(this).children('textarea').val();
+    console.log(tweetText);
      
-        if (!tweetText) {
-          alert('Tweet is empty!');
+    if (!tweetText) {
+      alert('Tweet is empty!');
     
-        } else if (tweetText.length > 140) {
-          alert('Tweet is too long!');
+    } else if (tweetText.length > 140) {
+      alert('Tweet is too long!');
     
-        } else { 
+    } else {
           
-          $.ajax('/tweets', {
-            data: $(this).serialize(),
-            method: 'POST'
-          })
-          .then(() => {
-            loadTweets();
-            $('#tweet-input').val('');
-          });
-        }  
-
+      $.ajax('/tweets', {
+        data: $(this).serialize(),
+        method: 'POST'
       })
-    
+        .then(() => {
+          loadTweets();
+          $('#tweet-input').val('');
+          $('.counter').text('140');
+        });
+    }
 
-      const loadTweets = function () {
-        $.ajax('/tweets', {
-          method: 'GET',
-          dataType: 'JSON'
-        })
-          .then(tweets => renderTweets(tweets));
-      };
+  });
     
-      loadTweets();
+/* Load Tweets Function */
 
-      
-      
-const createTweetElement = function(tweet) {
+  const loadTweets = function() {
+    $.ajax('/tweets', {
+      method: 'GET',
+      dataType: 'JSON'
+    })
+      .then(tweets => renderTweets(tweets));
+  };
+    
+  loadTweets();
+
+   /* Create New Tweet Element Function */
+
+  const createTweetElement = function(tweet) {
     const exampleTweet = `<article class="tweet">
           <header>
             <img src= ${escape(tweet.user.avatars)}/>
@@ -72,11 +74,9 @@ const createTweetElement = function(tweet) {
             <h5>${timeago.format(tweet.created_at)}</h5>
             <h5>flag retweet favorite</h5>
           </footer>
-        </article>`
+        </article>`;
 
-  return exampleTweet;
-};
+    return exampleTweet;
+  };
 
-
-// renderTweets(data);
 });
