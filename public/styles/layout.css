@@ -6,25 +6,35 @@
 html {
   box-sizing: border-box;
 }
+
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
+/* any nav tag will use this font by default, more specific*/
 
 /*
  * Global layout stuff
  */
+
  /* source sans pro font should apply to everything*/
- * font {
-   font-family: source Sans Pro;
- }
- 
+/* for the flow of css, start with the most generic and get more specific as I go down */
+
+
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
+.container {
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 50px 50px 50px;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
