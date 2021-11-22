@@ -21,16 +21,19 @@ $(document).ready(() => {
     
       $('.input').on('submit', (event) => {
         event.preventDefault();
+        $('.error').hide();
         const tweetText = $('#tweet').val();
         console.log("$('#tweet').val()", $('#tweet').val());
         console.log('tweetText', tweetText);
          
         if (!tweetText) {
-          alert('Tweet is empty!');
-        
+            $('.error').html('Tweet is empty!').slideDown('slow');
+
+
         } else if (tweetText.length > 140) {
-          alert('Tweet is too long!');
+            $('.error').html('Tweet is too long!');
         
+
         } else {
               
           $.ajax('/tweets', {
@@ -39,7 +42,7 @@ $(document).ready(() => {
           })
             .then(() => {
               loadTweets();
-              $('#tweet-input').val('');
+              $('#tweet').val('');
               $('.counter').text('140');
             });
         }
@@ -64,10 +67,10 @@ $(document).ready(() => {
           const exampleTweet = `<article class="tweet">
               <header>
                 <img src= ${escape(tweet.user.avatars)}/>
+                <p>${escape(tweet.user.handle)}</p>
                   <h4>${escape(tweet.user.name)}</h4>
-                  <p>${escape(tweet.user.handle)}</p>
               </header>
-              <p>${escape(tweet.content.text)}</p>
+              <p class="content">${escape(tweet.content.text)}</p>
               <footer class="timeago">
                 <div>${timeago.format(tweet.created_at)}</div>
                 <span>
