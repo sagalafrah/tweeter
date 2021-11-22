@@ -17,6 +17,7 @@ Tweeter is a simple, single-page Twitter clone made with HTML, CSS, JS, jQuery a
 !["Screenshot of Tweets"](https://github.com/sagalafrah/tweeter/blob/master/docs/Tweets.png)
 
 *Screenshot of Header*
+
 !["Screenshot of Header"](https://github.com/sagalafrah/tweeter/blob/master/docs/Header.png)
 
 ## Getting Started
