@@ -9,3 +9,12 @@ body > header {
     background-color: #facde4;
     background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
     }
+
+
+    @media only screen and (min-width: 1024px) {
+        .mainheader {
+          float: left;
+          width: 28vw;
+          margin: 5.5em 0.5em 0.5em 1.5em;
+        }
+      }
