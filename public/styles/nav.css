@@ -39,7 +39,12 @@ position: fixed;
   }
 
 
-
+  @media only screen and (max-width: 1024px) {
+    nav {
+      background-color: #facde4;
+    background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+    }
+  }
 
 
 

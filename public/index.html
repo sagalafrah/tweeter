@@ -39,7 +39,7 @@
     </span>
     
     </nav>
-    <header>
+    <header class="mainheader">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -52,6 +52,9 @@
     <main class="container">
       <section class="new-tweet">
         <h3>Compose Tweet</h3> 
+        <div class="error_box">
+          <span class="error"></span>
+          </div>
         <form class="input" action ="/tweets" method ="POST">
           <textarea id="tweet" name="text" class="textbox" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
