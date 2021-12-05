@@ -31,7 +31,7 @@ $(document).ready(() => {
 
 
         } else if (tweetText.length > 140) {
-            $('.error').html('Tweet is too long!');
+            $('.error').html('Tweet is too long!').slideDown('slow');
         
 
         } else {
