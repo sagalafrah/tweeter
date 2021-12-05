@@ -35,4 +35,8 @@ Tweeter is a simple, single-page Twitter clone made with HTML, CSS, JS, jQuery a
 
 
 
+<<<<<<< HEAD
 #### Enjoy! 
+=======
+#### Enjoy! 
+>>>>>>> 26e7d53e94979a6cf0733c30370b73202f4cec8e
